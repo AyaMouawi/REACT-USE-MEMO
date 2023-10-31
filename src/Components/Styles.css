@@ -1,0 +1,40 @@
+/* Default Light Theme */
+body,
+.light {
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Dark Theme */
+.dark {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+button {
+  margin: 10px;
+  padding: 8px 15px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 5px 0;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
