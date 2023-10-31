@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# React useMemo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the useMemo demonstration. This project showcases the importance and functionality of the useMemo hook in React. By using this hook, you can optimize expensive operations and prevent them from re-running on every render.
 
-## Available Scripts
+## There are two main components:
 
-In the project directory, you can run:
+### NameFilterWithoutMemo:
 
-### `npm start`
+Filters a list of names based on the input filter.
+Every time the component re-renders (like when you increment the counter), the filtering operation is executed.
+This can lead to performance issues as the operation is run even when the list or the filter hasn't changed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### NameFilterWithMemo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Also filters a list of names, but this time using the useMemo hook.
+The filtering operation is optimized so that it only runs when there's an actual change in the list of names or the filter.
+Even if other parts of the component update (like our counter), useMemo ensures that the expensive operation is not unnecessarily repeated.
+To see the difference between the two, observe the console logs. It'll show how often the filtering function is executed in each scenario.
 
-### `npm test`
+### Why Use useMemo?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React's useMemo hook helps in optimizing performance. When you have computationally expensive operations in your component, running them on every render can be costly. With useMemo, you can ensure these operations only re-run when certain dependencies change, saving unnecessary recalculations and enhancing performance.
 
-### `npm run build`
+## Exercise
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Clone the repository:**
+`git clone https://github.com/danielawde9/REACT-USE-MEMO`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Switch to the 'initial' branch for the exercise:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`git checkout initial`
 
-### `npm run eject`
+This branch contains the basic setup and structure for you to start experimenting with useMemo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Install the dependencies:
+`npm install`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`npm start`
